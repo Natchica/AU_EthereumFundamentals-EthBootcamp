@@ -4,13 +4,13 @@ const axios = require('axios');
 const ALCHEMY_URL = "https://eth-sepolia.g.alchemy.com/v2/RwyA9iW1RdnTreySdGx7hTUescnfXlqn";
 
 axios.post(ALCHEMY_URL, {
-  jsonrpc: "2.0",
-  id: 1,
-  method: "eth_getBlockByNumber",
-  params: [
-    "0xb443", // block 46147
-    true  // retrieve the full transaction object in transactions array
-  ]
+    "id": 1,
+    "jsonrpc": "2.0",
+    "params": [
+      "0xb86120f0eDc5F32E6D2151d6FC4FCb3c0c2f537D",
+      "latest"
+    ],
+    "method": "eth_getBalance"
 }).then((response) => {
   console.log(response.data.result);
 });
