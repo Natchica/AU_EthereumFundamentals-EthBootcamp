@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // get the content of the alchemy_url.txt file
-const ALCHEMY_URL = fs.readFileSync('alchemy_url.txt', 'utf8').trim();
+const ALCHEMY_URL = fs.readFileSync('../alchemy_url.txt', 'utf8').trim();
 
 axios.post(ALCHEMY_URL, {
     "id": 1,
