@@ -1,140 +1,81 @@
+/* Base App styles */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Header styles */
 .header {
-  padding: 20px;
+  padding: 10px 20px;
   background: #f5f5f5;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
-.transactions-container {
-  padding: 20px;
-}
-
-.transactions-list {
+/* Main content layout */
+.main-content {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-}
-
-.transaction-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.transaction-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.transaction-header a {
-  color: #2196f3;
-  text-decoration: none;
-}
-
-.status {
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.status-success {
-  background: #e8f5e9;
-  color: #2e7d32;
-}
-
-.status-failed {
-  background: #ffebee;
-  color: #c62828;
-}
-
-.transfer-info {
-  background: #f8f9fa;
-  padding: 12px;
-  border-radius: 6px;
-  margin: 10px 0;
-}
-
-.transfer-info h3 {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-}
-
-.transfer-info p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-.token-transfers {
-  margin-top: 15px;
-}
-
-.token-transfers h3 {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-}
-
-.search-container {
-  display: flex;
-  gap: 10px;
   padding: 20px;
-  justify-content: center;
-  align-items: center;
+  height: calc(100vh - 60px);
+  overflow: hidden;
 }
 
-.block-search-input {
+/* Section containers */
+.block-explorer-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.address-search-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.address-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* General headings */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Search container styles */
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.block-search-input,
+.address-search-input {
   padding: 10px;
   font-size: 16px;
   border: 2px solid #ddd;
   border-radius: 4px;
-  width: 200px;
+  width: 400px;
 }
 
-.block-search-input:focus {
+.block-search-input:focus,
+.address-search-input:focus {
   outline: none;
   border-color: #2196f3;
 }
@@ -159,6 +100,220 @@
   cursor: not-allowed;
 }
 
+/* Block info styles */
+.block-info {
+  margin: 20px 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.block-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.block-details p {
+  margin: 0;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Transaction container styles */
+.transactions-container {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.transactions-list {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 10px;
+}
+
+/* Transaction card styles */
+.transaction-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction-header a {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+/* Status indicators */
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-failed {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* Transfer info styles */
+.transfer-info {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.transfer-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.transfer-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Token transfer styles */
+.token-transfers {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.token-transfers h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+/* Address info styles */
+.address-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  text-align: center;
+}
+
+.info-item {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tokens container - allows scrolling */
+.tokens-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Tokens grid - scrollable area */
+.tokens-grid {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 10px -10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* Token item styling */
+.token-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-right: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.token-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.token-symbol {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.token-name {
+  color: #666;
+}
+
+.token-balance {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.token-contract {
+  margin-top: 10px;
+}
+
+.token-contract a {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.token-contract a:hover {
+  text-decoration: underline;
+}
+
+/* Error message styles */
 .error-message {
   color: #c62828;
   text-align: center;
@@ -168,24 +323,50 @@
   border-radius: 4px;
 }
 
-.block-info {
+/* Loading indicator */
+.loading {
+  text-align: center;
   padding: 20px;
-  margin: 20px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
+  color: #666;
 }
 
-.block-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
+/* Scrollbar styling */
+.transactions-list::-webkit-scrollbar,
+.tokens-grid::-webkit-scrollbar {
+  width: 8px;
 }
 
-.block-details p {
-  margin: 0;
-  padding: 10px;
-  background-color: white;
+.transactions-list::-webkit-scrollbar-track,
+.tokens-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
   border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.transactions-list::-webkit-scrollbar-thumb,
+.tokens-grid::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.transactions-list::-webkit-scrollbar-thumb:hover,
+.tokens-grid::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .block-explorer-section,
+  .address-search-section {
+    height: auto;
+  }
+  
+  .block-search-input,
+  .address-search-input {
+    width: 100%;
+    max-width: 300px;
+  }
 }
