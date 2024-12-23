@@ -1,3 +1,4 @@
 {
-  "LockModule#Lock": "0xb3C8AB4cFDB0A89A02a72bE35F35904fB9D52bBa"
+  "LockModule#Lock": "0xb3C8AB4cFDB0A89A02a72bE35F35904fB9D52bBa",
+  "FaucetModule#Faucet": "0x894eD75C4b415cB00c9e66Cd5582923713dEfBd5"
 }
